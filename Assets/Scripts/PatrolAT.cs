@@ -26,9 +26,11 @@ namespace NodeCanvas.Tasks.Actions {
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
+			// Orbit around pivot
 			Vector3 distance = pivot.transform.position - agent.transform.position;
 			Vector3 target = Vector3.Cross(distance, Vector3.up);
 			nmAgent.SetDestination(agent.transform.position + target);
+			EndAction(true);
 		}
 
 		//Called when the task is disabled.

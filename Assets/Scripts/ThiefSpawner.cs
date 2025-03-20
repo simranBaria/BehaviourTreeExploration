@@ -17,7 +17,7 @@ public class ThiefSpawner : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            
+            // Spawn a thief on the plane
             Vector3 position = new(Random.Range(-45, 45), 0, Random.Range(-45, 45));
             Instantiate(thief, position, Quaternion.identity);
         }

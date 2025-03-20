@@ -11,6 +11,7 @@ public class Thief : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Head towards treaure
         nmAgent = GetComponent<NavMeshAgent>();
         target = GameObject.FindWithTag("Treasure");
         nmAgent.SetDestination(target.transform.position);
@@ -18,6 +19,7 @@ public class Thief : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        // Die if hit by guard
         if (collision.collider.CompareTag("Guard")) Destroy(gameObject);
     }
 }
